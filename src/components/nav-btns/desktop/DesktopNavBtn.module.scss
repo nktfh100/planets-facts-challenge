@@ -1,0 +1,22 @@
+.container a {
+    display: block;
+    background-color: $color-omega;
+    border: 1px solid $color-gamma;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    text-transform: uppercase;
+    padding: 0.8em 0;
+    &:hover,
+    &:focus {
+        background-color: $color-gamma;
+    }
+
+    span:first-child {
+        color: $color-beta;
+    }
+
+    span {
+        margin-left: 1em;
+    }
+}

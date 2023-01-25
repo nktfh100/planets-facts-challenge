@@ -1,0 +1,141 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-omega;
+    border-bottom: 1px solid $color-gamma;
+}
+
+.logo {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.nav {
+    margin-right: 3rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-item a {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    padding-top: 1em;
+    margin-bottom: 1em;
+
+    transition: border-top 0.2s;
+
+    color: $color-beta;
+
+    &:hover {
+        color: $color-alpha;
+    }
+}
+
+.navbar-item-active a {
+    color: $color-alpha;
+}
+
+.mobile-nav-item-icon {
+    display: none;
+}
+
+.mobile-nav-btn {
+    display: none;
+}
+
+@media screen and (max-width: 980px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-top: 1rem;
+        margin-bottom: 0.2rem;
+        margin-left: 0rem;
+    }
+
+    .nav ul {
+        gap: 0.8em;
+    }
+
+    .navbar-item a {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+    .logo {
+        margin-top: 0;
+        margin-left: 1rem;
+    }
+
+    .nav {
+        position: absolute;
+        left: -100%;
+        top: 0;
+        transition: 0.2s;
+        margin-top: 4rem;
+        z-index: 10;
+        ul {
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+            background-color: $color-omega;
+            gap: 0.5em;
+        }
+    }
+
+    .nav-active {
+        left: 0;
+    }
+
+    .navbar-item {
+        &:first-child {
+            margin-top: 1.5rem;
+        }
+
+        &:last-child {
+            border-bottom: unset;
+        }
+
+        border-bottom: 1px solid $color-gamma;
+        width: 90%;
+        margin: 0 auto;
+
+        a {
+            display: flex;
+            align-items: center;
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .mobile-nav-item-icon {
+        display: block;
+    }
+
+    .mobile-nav-btn {
+        all: unset;
+        outline: revert;
+        margin-right: 1rem;
+    }
+}

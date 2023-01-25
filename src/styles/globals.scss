@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color: $color-alpha;
+}
+
+body {
+  background-color: $color-omega;
+  background-image: url("/background-stars.svg");
+}
+
+.no-scroll {
+  position: fixed;
+}
+
+a {
+  all: unset;
+  outline: revert;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.13rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 0.75rem;
+  letter-spacing: 0.19rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.063rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.56rem;
+}
+
+@media screen and (max-width: 980px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.056rem;
+  }
+
+  h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.046rem;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    letter-spacing: 0.047rem;
+  }
+}

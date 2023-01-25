@@ -1,0 +1,187 @@
+.planet {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+}
+
+.left-section {
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    img {
+        width: 290px;
+        height: 290px;
+    }
+}
+
+.geology-img {
+    display: none;
+    position: absolute;
+
+    top: 66%;
+
+    &.geology-img-active {
+        display: block;
+        height: auto;
+        width: 10rem;
+    }
+}
+
+.right-section {
+    flex-basis: 22%;
+    min-width: 18rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container {
+    margin-bottom: 1.5rem;
+
+    .planet-name {
+        margin-bottom: 1.5rem;
+    }
+
+    .info-content {
+        margin-bottom: 1em;
+        min-height: 18vh;
+    }
+}
+
+.source-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    p,
+    a {
+        font-size: 0.95rem;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+.info-desktop-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stats-container ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.planet-stat {
+    padding: 1.5rem;
+    padding-right: 0.5rem;
+    border: 1px solid $color-gamma;
+    flex-basis: 15%;
+    h4 {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.mobile-info-nav {
+    display: none;
+}
+
+@media screen and (max-width: 980px) {
+    .top-section {
+        flex-direction: column;
+        margin-top: 1.5rem;
+    }
+
+    .left-section {
+        img {
+            width: 190px;
+            height: 190px;
+        }
+    }
+
+    .geology-img-active {
+        &.geology-img-active {
+            width: 6rem;
+        }
+    }
+
+    .right-section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .info-container {
+        flex-basis: 50%;
+    }
+
+    .info-desktop-nav {
+        flex-basis: 30%;
+    }
+
+    .stats-container ul {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .mobile-info-nav {
+        display: block;
+        ul {
+            margin-top: 1.25rem;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-bottom: 1px solid $color-gamma;
+        }
+    }
+
+    .left-section {
+        min-height: 30vh;
+        img {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    .geology-img-active {
+        &.geology-img-active {
+            width: 5rem;
+        }
+    }
+
+    .info-container {
+        margin-top: 1rem;
+        flex-basis: 90%;
+        text-align: center;
+    }
+
+    .source-container {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .info-desktop-nav {
+        display: none;
+    }
+
+    .stats-container ul {
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 2rem;
+    }
+}

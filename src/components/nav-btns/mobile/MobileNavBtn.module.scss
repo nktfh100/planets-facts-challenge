@@ -1,0 +1,10 @@
+.container a {
+    display: block;
+    text-transform: uppercase;
+    color: $color-beta;
+    padding-bottom: 1rem;
+}
+
+.container-active a {
+    color: white;
+}
