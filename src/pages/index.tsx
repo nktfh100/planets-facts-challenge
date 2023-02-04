@@ -8,7 +8,7 @@ export default function Home() {
 
     useEffect(() => {
         router.push(PlanetsData[0].name.toLowerCase())
-    }, [])
+    }, [router])
 
     return (<h1 style={{ textAlign: "center" }}>Loading...</h1>)
 }

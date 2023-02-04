@@ -1,18 +1,16 @@
 import Image from 'next/image'
 import styles from '@/styles/Planet.module.scss'
-import { useAppStore } from '@/store/store'
 import { useRouter } from 'next/router'
 import { PlanetData, PlanetInfoType } from '@/types'
 import Link from 'next/link'
 import DesktopNavBtn from '@/components/nav-btns/desktop/DesktopNavBtn'
 import MobileNavBtn from '@/components/nav-btns/mobile/MobileNavBtn'
 import { motion } from 'framer-motion'
+import planetsData from '@/data.json'
 
-export default function Planet() {
+export default function Planet({ planetData }: { planetData: PlanetData }) {
 
   const router = useRouter();
-
-  const planetData: PlanetData = useAppStore((state) => state.activePlanetData);
 
   const activeInfoType: "overview" | "structure" | "geology" = router.query.infoType as any || "overview";
 
@@ -76,4 +74,21 @@ function PlanetStat({ title, value }: { title: string, value: string }) {
       <motion.h2 key={value} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{value}</motion.h2>
     </li>
   )
+}
+
+export async function getStaticProps({ params: { planet } }: { params: { planet: string } }) {
+  const planetData: PlanetData | undefined = planetsData.find((ele) => ele.name.toLowerCase() === planet);
+  return { props: { planetData } };
+}
+
+export async function getStaticPaths() {
+
+  const paths = planetsData.map((pl: PlanetData) => {
+    return { params: { planet: pl.name.toLowerCase() } };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
 }
